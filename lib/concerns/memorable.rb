@@ -1,13 +1,17 @@
-module Memorable
-    def reset_all
-        self.all.clear
-    end
+module ClassMethods
+    module Memorable
+        def reset_all
+            self.all.clear
+        end
 
-    def count
-        all.count
-    end
+        def count
+            all.count
+        end
+end
+    module InstanceMethods
 
-    def initialize
-        self.class.all << self
+        def initialize
+            self.class.all << self
+        end
     end
 end
